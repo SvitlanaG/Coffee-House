@@ -1,0 +1,76 @@
+.menu_card-container {
+  gap: 37px;
+
+  @include breakpoint-down(adjusted-medium) {
+    padding-bottom: 40px;
+  }
+}
+
+.menu_title {
+  margin: 0 290px;
+  text-align: center;
+
+  @include breakpoint-down(large) {
+    margin: 0;
+  }
+}
+
+.menu_tabs {
+  gap: 16px;
+  padding: 40px 0;
+}
+
+.menu_card {
+  width: 310px;
+  height: 467px;
+  flex-shrink: 0;
+  padding-bottom: 40px;
+  border-radius: 40px;
+  border: 1px solid $border-light-color;
+  &_img {
+    border-radius: 40px;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.6s ease;
+  }
+  &:hover img {
+    transform: scale(1);
+    transition: transform 0.6s ease;
+  }
+  .menu_card_content {
+    position: relative;
+    padding: 20px;
+    .menu_card_title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 110%;
+      margin: 0;
+    }
+    .menu_card_description {
+      line-height: 150%;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+    .menu_card_price {
+      position: absolute;
+      top: 120px;
+      left: 20px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 125%;
+    }
+  }
+}
+
+#coffee5,
+#coffee6,
+#coffee7,
+#coffee8 {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}

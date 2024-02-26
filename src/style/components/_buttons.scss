@@ -1,0 +1,206 @@
+// All styles related to the button component
+.btn-primary {
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  padding: 22px 78px;
+  border-radius: 100px;
+  background: $bg-body-color;
+  color: $text-dark-color;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 150%;
+  .start-screen_icon {
+    position: absolute;
+    right: 26%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+
+    @include breakpoint-down(adjusted-medium) {
+      display: block;
+    }
+  }
+  &:hover .start-screen_icon {
+    display: block;
+  }
+}
+
+.btn__arrow {
+  cursor: pointer;
+  border: 1px solid $border-dark-color;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $bg-container-color;
+      color: $text-light-color;
+      transition: background-color 0.5s ease-in-out;
+    }
+  }
+}
+
+.btn__refresh {
+  @extend .btn__arrow;
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin: 0 auto;
+}
+
+.btn-app-store,
+.btn-google-play {
+  cursor: pointer;
+  width: 160px;
+  padding: 8px 19px;
+  align-items: center;
+  border: 1px solid $border-dark-color;
+  color: $text-dark-color;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 140%;
+  border-radius: 100px;
+  .btn_icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    fill: $text-dark-color;
+  }
+  @media (hover: hover) {
+    &:hover {
+      background-color: $bg-container-color;
+      color: $text-light-color;
+      transition: background-color 0.6s ease-in-out;
+    }
+    &:hover .btn_icon {
+      fill: $text-light-color;
+    }
+  }
+}
+
+.btn-icon-light {
+  cursor: pointer;
+  @extend .btn__arrow;
+  border-color: $border-light-color;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $bg-body-color;
+      color: $text-dark-color;
+      transition: background-color 0.5s ease-in-out;
+    }
+    &:hover img {
+      filter: invert(1);
+    }
+  }
+}
+
+.tab-item {
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  padding: 8px 16px 8px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid $border-light-color;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 150%;
+  color: $text-dark-color;
+  background-color: $bg-body-color;
+  user-select: none;
+
+  img {
+    border-radius: 100px;
+    border: 1px solid $border-light-color;
+    padding: 3px;
+    background-color: $border-light-color;
+  }
+
+  &:hover {
+    background-color: $border-dark-color;
+    color: $bg-body-color;
+    transition: background-color 0.5s ease-in-out;
+  }
+  &-active {
+    background-color: $border-dark-color;
+    color: $bg-body-color;
+    // pointer-events: none;
+  }
+  &-inactive {
+    background-color: #fff;
+  }
+}
+
+.link-with-icon {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  background-color: $bg-body-color;
+  border: 1px solid transparent;
+  font-weight: 600;
+  line-height: 150%;
+  color: $text-dark-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $text-dark-color;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: transform 350ms ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: 50% 50%;
+  }
+}
+
+.icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__burger {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: 1px solid $border-dark-color;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    position: absolute;
+    transition: transform 0.3s ease;
+    width: 16px;
+    height: 2px;
+    background-color: $text-dark-color;
+    transition: transform 2s ease-in-out, top 2s ease-in-out,
+      left 2s ease-in-out;
+  }
+  & span:first-child {
+    top: 4px;
+    left: -8px;
+  }
+
+  & span:last-child {
+    bottom: 4px;
+    left: -8px;
+  }
+}
